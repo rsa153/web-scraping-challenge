@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron text-center">
+              <h1 class="display-3">Mission to Mars</h1>
+              <a href="http://127.0.0.1:5000/scrape" class="btn btn-warning">Scrape New Data</a>
+          </div>
+        <div class="row p-2 pb-4">
+            <div class="col-12 d-flex justify-content-center">
+                <div class="alert alert-warning" role="alert">
+                    <h3 class="alert-heading text-center">Latest Mars News</h3>
+                    <hr>
+                <h5>{{mars.news.news_title}}</h5>
+                {{mars.news.news_p}}
+                </div>
+            </div>
+        </div>
+        <div class="row p-2">
+            <div class="col-md-7 col-sm-12">
+                <div class="card text-center border-0">
+                    <div class="card-body">
+                        <h3 class="card-title">Featured Mars Image</h3>
+                    </div>
+                    <img src={{mars.featured_image_url}} alt="Featured Mars Image" class="card-img-bottom">
+                
+                </div>
+            </div>
+            <div class="col-md-5 col-sm-12">
+                <div class="card text-center border-0 m-0">
+                    <div class="card-body">
+                        <h3 class="card-title">Mars Facts</h3><br>
+                        <div class="table-responsive">
+                            {{mars.facts_table|safe}}
+                            <!thanks to https://stackoverflow.com/questions/3206344/passing-html-to-template-using-flask-jinja2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row pb-2 pt-4">
+            <div class="col-12 text-center">
+                <h3>Mars Hemispheres</h3>
+            </div>
+        </div>
+        <div class="row p-2">
+            <div class="col-md-6 col-sm-12">
+                <div class="card bg-warning">
+                    <img src={{mars.hemispheres.0.img_url}} alt={{mars.hemispheres.0.title}} class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">{{mars.hemispheres.0.title}}</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="card bg-warning">
+                    <img src={{mars.hemispheres.1.img_url}} alt={{mars.hemispheres.1.title}} class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">{{mars.hemispheres.1.title}}</h5>
+                    </div>
+                </div>
+              </div>
+        </div>
+        <div class="row p-2 pb-5">
+            <div class="col-md-6 col-sm-12">
+                <div class="card bg-warning">
+                    <img src={{mars.hemispheres.2.img_url}} alt={{mars.hemispheres.2.title}} class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">{{mars.hemispheres.2.title}}</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="card bg-warning">
+                    <img src={{mars.hemispheres.3.img_url}} alt={{mars.hemispheres.3.title}} class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">{{mars.hemispheres.3.title}}</h5>
+                    </div>
+                </div>
+              </div>
+        </div>
+
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>
